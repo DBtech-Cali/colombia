@@ -1,0 +1,775 @@
+/* =========================================================
+   ¿QUIÉN QUIERE SER COLOMBIANO?
+   Hoja de estilos — estética de concurso de TV
+   ========================================================= */
+
+:root {
+  /* --- Paleta --- */
+  --azul-oscuro:      #0a1a33;
+  --azul-profundo:     #061021;
+  --azul-panel:        #0f2547;
+  --negro:             #05060a;
+  --amarillo:          #f4c10f;
+  --amarillo-suave:    #ffe9a8;
+  --rojo:              #ce1126;
+  --rojo-oscuro:       #8c0c1a;
+  --dorado:            #d4af37;
+  --dorado-claro:      #f2d675;
+  --blanco:            #f7f4ea;
+  --gris-texto:        #b9c3d9;
+  --verde-ok:          #1fae5b;
+
+  /* --- Tipografía --- */
+  --fuente-display: "Arial Black", "Segoe UI Black", "Helvetica Neue", Arial, sans-serif;
+  --fuente-cuerpo: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fuente-marcador: "Consolas", "Courier New", monospace;
+
+  --sombra-dorada: 0 0 24px rgba(212, 175, 55, 0.45);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--azul-profundo);
+  color: var(--blanco);
+  font-family: var(--fuente-cuerpo);
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img { max-width: 100%; display: block; }
+
+/* =========================================================
+   FONDO DE ESTUDIO — degradado radial + textura sutil
+   ========================================================= */
+body {
+  background:
+    radial-gradient(ellipse at 50% -10%, rgba(212,175,55,0.16), transparent 55%),
+    radial-gradient(ellipse at 50% 110%, rgba(206,17,38,0.18), transparent 55%),
+    linear-gradient(180deg, var(--azul-oscuro) 0%, var(--azul-profundo) 60%, var(--negro) 100%);
+  min-height: 100vh;
+}
+
+/* =========================================================
+   MARCO DE LUCES DE ESTUDIO (marquesina animada)
+   ========================================================= */
+.marco-luces {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+.fila-luces {
+  position: absolute;
+}
+.fila-superior, .fila-inferior {
+  left: 0; right: 0;
+}
+.fila-superior { top: 6px; }
+.fila-inferior { bottom: 6px; }
+.fila-izquierda, .fila-derecha {
+  top: 0; bottom: 0;
+}
+.fila-izquierda { left: 6px; }
+.fila-derecha { right: 6px; }
+
+/* Simulamos una hilera de bombillas de camerino con un degradado radial repetido */
+.fila-superior, .fila-inferior {
+  height: 10px;
+  background-image: radial-gradient(circle, var(--dorado-claro) 0 3px, transparent 4px);
+  background-size: 46px 10px;
+  background-repeat: repeat-x;
+  opacity: 0.55;
+  animation: parpadeo-luces 2.4s linear infinite;
+}
+.fila-izquierda, .fila-derecha {
+  width: 10px;
+  background-image: radial-gradient(circle, var(--dorado-claro) 0 3px, transparent 4px);
+  background-size: 10px 46px;
+  background-repeat: repeat-y;
+  opacity: 0.55;
+  animation: parpadeo-luces 2.4s linear infinite reverse;
+}
+
+@keyframes parpadeo-luces {
+  0%, 100% { opacity: 0.25; filter: brightness(1); }
+  50% { opacity: 0.75; filter: brightness(1.6); }
+}
+
+@media (max-width: 720px) {
+  .marco-luces { display: none; }
+}
+
+/* =========================================================
+   PANTALLAS — sistema de vistas
+   ========================================================= */
+.pantalla {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 10;
+  animation: aparecer 0.5s ease both;
+}
+.pantalla.activa { display: flex; }
+
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.resplandor {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+}
+.resplandor-inicio {
+  width: 60vw; height: 60vw;
+  max-width: 900px; max-height: 900px;
+  background: radial-gradient(circle, rgba(244,193,15,0.25), transparent 65%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* =========================================================
+   PANTALLA DE INICIO
+   ========================================================= */
+.contenido-inicio {
+  text-align: center;
+  max-width: 900px;
+}
+
+.escudo-cinta {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+.franja {
+  width: 64px;
+  height: 10px;
+  border-radius: 3px;
+  box-shadow: var(--sombra-dorada);
+}
+.franja-amarilla { background: var(--amarillo); }
+.franja-azul { background: var(--azul-panel); border: 1px solid var(--dorado); }
+.franja-roja { background: var(--rojo); }
+
+.ojo-titulo {
+  font-size: 13px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--dorado-claro);
+  margin: 0 0 14px;
+  font-weight: 700;
+}
+
+.titulo-principal {
+  font-family: var(--fuente-display);
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 30px rgba(212,175,55,0.35);
+}
+.titulo-principal .dorado {
+  background: linear-gradient(180deg, var(--dorado-claro), var(--dorado) 60%, #a9822a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+.linea-bandera { font-size: 0.55em; display: block; margin-bottom: 6px; }
+
+.subtitulo-inicio {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--gris-texto);
+  margin-bottom: 40px;
+}
+
+.botonera-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.boton {
+  border: none;
+  border-radius: 12px;
+  padding: 16px 34px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.boton:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.boton:active { transform: translateY(0); }
+.boton:focus-visible {
+  outline: 3px solid var(--dorado-claro);
+  outline-offset: 3px;
+}
+
+.boton-primario {
+  background: linear-gradient(180deg, var(--dorado-claro), var(--dorado) 70%, #a9822a);
+  color: var(--negro);
+  box-shadow: 0 6px 0 #7d611f, 0 10px 24px rgba(0,0,0,0.4);
+}
+.boton-primario:hover { box-shadow: 0 4px 0 #7d611f, 0 8px 20px rgba(0,0,0,0.45); }
+
+.boton-xl { padding: 20px 52px; font-size: 1.2rem; border-radius: 14px; }
+
+.boton-secundario {
+  background: transparent;
+  color: var(--blanco);
+  border: 2px solid rgba(247,244,234,0.35);
+}
+.boton-secundario:hover { border-color: var(--dorado-claro); color: var(--dorado-claro); }
+
+.boton-outline {
+  background: rgba(15,37,71,0.6);
+  color: var(--blanco);
+  border: 1px solid rgba(212,175,55,0.5);
+  padding: 10px 18px;
+  font-size: 0.8rem;
+}
+.boton-outline:hover { border-color: var(--dorado-claro); background: rgba(212,175,55,0.12); }
+
+/* =========================================================
+   PANELES DE CONFIGURACIÓN / EQUIPOS
+   ========================================================= */
+.tarjeta-panel {
+  background: linear-gradient(180deg, rgba(15,37,71,0.92), rgba(6,16,33,0.96));
+  border: 1px solid rgba(212,175,55,0.35);
+  border-radius: 22px;
+  padding: 40px;
+  width: min(560px, 92vw);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.titulo-panel {
+  font-family: var(--fuente-display);
+  font-size: 1.6rem;
+  margin: 0 0 28px;
+  color: var(--dorado-claro);
+  text-align: center;
+}
+.campo-config {
+  margin-bottom: 24px;
+}
+.campo-config > label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gris-texto);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.campo-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.campo-fila > label { margin-bottom: 0; }
+
+.selector-numerico {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  padding: 8px 16px;
+  width: fit-content;
+}
+.btn-stepper {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--dorado);
+  background: transparent;
+  color: var(--dorado-claro);
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.btn-stepper:hover { background: rgba(212,175,55,0.15); }
+#valor-equipos {
+  font-family: var(--fuente-marcador);
+  font-size: 1.4rem;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+}
+
+.grupo-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(247,244,234,0.3);
+  background: transparent;
+  color: var(--blanco);
+  font-weight: 700;
+}
+.chip:hover { border-color: var(--dorado-claro); }
+.chip-activo {
+  background: var(--amarillo);
+  color: var(--negro);
+  border-color: var(--amarillo);
+}
+
+.interruptor {
+  width: 52px; height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(247,244,234,0.35);
+  background: rgba(0,0,0,0.3);
+  position: relative;
+  padding: 2px;
+}
+.interruptor-bola {
+  display: block;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--gris-texto);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.interruptor-on { border-color: var(--verde-ok); }
+.interruptor-on .interruptor-bola {
+  transform: translateX(24px);
+  background: var(--verde-ok);
+}
+
+.botonera-config {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.lista-nombres-equipos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.fila-nombre-equipo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.fila-nombre-equipo .swatch {
+  width: 14px; height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.fila-nombre-equipo input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(212,175,55,0.4);
+  background: rgba(0,0,0,0.3);
+  color: var(--blanco);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.fila-nombre-equipo input:focus { outline: 2px solid var(--dorado-claro); }
+
+/* =========================================================
+   TRANSICIÓN DE NIVEL
+   ========================================================= */
+.contenido-transicion { text-align: center; }
+.numero-transicion {
+  font-family: var(--fuente-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--dorado-claro);
+  margin: 0 0 4px;
+}
+.nombre-transicion {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 0 0 24px;
+  color: var(--blanco);
+}
+.linea-dorada {
+  width: 160px; height: 3px;
+  margin: 0 auto 40px;
+  background: linear-gradient(90deg, transparent, var(--dorado-claro), transparent);
+}
+
+/* =========================================================
+   MARCADOR DE EQUIPOS
+   ========================================================= */
+.marcador-equipos {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 15;
+  max-width: 94vw;
+}
+.tarjeta-equipo {
+  background: rgba(6,16,33,0.85);
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 130px;
+}
+.tarjeta-equipo .nombre-equipo {
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--gris-texto);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+}
+.tarjeta-equipo .puntos-equipo {
+  font-family: var(--fuente-marcador);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--amarillo);
+  min-width: 26px;
+  text-align: right;
+}
+.tarjeta-equipo .btns-puntos {
+  display: flex;
+  gap: 4px;
+}
+.tarjeta-equipo .btn-punto {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(212,175,55,0.5);
+  background: transparent;
+  color: var(--blanco);
+  font-size: 0.8rem;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.tarjeta-equipo .btn-punto:hover { background: rgba(212,175,55,0.2); }
+
+/* =========================================================
+   PANTALLA DE JUEGO
+   ========================================================= */
+#pantalla-juego { padding-top: 96px; justify-content: flex-start; gap: 18px; }
+
+.franja-nivel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(212,175,55,0.3);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dorado-claro);
+}
+.etiqueta-tema {
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+}
+
+.escenario-pregunta {
+  width: min(920px, 96vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.contenedor-timer {
+  position: relative;
+  width: 92px;
+  height: 92px;
+}
+.timer-circular { width: 100%; height: 100%; transform: rotate(-90deg); }
+.timer-pista {
+  fill: none;
+  stroke: rgba(255,255,255,0.12);
+  stroke-width: 8;
+}
+.timer-progreso {
+  fill: none;
+  stroke: var(--verde-ok);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 327; /* 2*pi*52 */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear, stroke 0.4s ease;
+}
+.timer-progreso.timer-amarillo { stroke: var(--amarillo); }
+.timer-progreso.timer-rojo { stroke: var(--rojo); animation: pulso-timer 0.6s ease-in-out infinite; }
+.timer-numero {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-marcador);
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+@keyframes pulso-timer {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.7); }
+}
+
+.tarjeta-pregunta-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.tarjeta-pregunta {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(15,37,71,0.95), rgba(6,16,33,0.98));
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 18px;
+  padding: 28px 32px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+  animation: entrada-pregunta 0.5s ease both;
+}
+@keyframes entrada-pregunta {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.texto-pregunta {
+  font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1.35;
+}
+
+.contenedor-imagen-pregunta {
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.3);
+  display: none;
+}
+.contenedor-imagen-pregunta.con-imagen { display: block; }
+.contenedor-imagen-pregunta img { width: 100%; height: auto; display: block; }
+
+.grid-opciones {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .grid-opciones { grid-template-columns: 1fr; }
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  background: rgba(15,37,71,0.75);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 14px;
+  padding: 16px 18px;
+  color: var(--blanco);
+  font-size: 1.02rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: aparecer-opcion 0.4s ease forwards;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.opcion:nth-child(1) { animation-delay: 0.15s; }
+.opcion:nth-child(2) { animation-delay: 0.32s; }
+.opcion:nth-child(3) { animation-delay: 0.49s; }
+.opcion:nth-child(4) { animation-delay: 0.66s; }
+
+@keyframes aparecer-opcion {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.opcion:hover:not(:disabled) {
+  border-color: var(--dorado-claro);
+  background: rgba(212,175,55,0.12);
+  transform: translateY(-2px);
+}
+.opcion:disabled { cursor: default; }
+
+.letra-opcion {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: rgba(212,175,55,0.18);
+  border: 1px solid var(--dorado);
+  color: var(--dorado-claro);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--fuente-display);
+  font-size: 0.95rem;
+}
+
+.opcion.marcada-correcta {
+  background: linear-gradient(180deg, rgba(31,174,91,0.35), rgba(31,174,91,0.15));
+  border-color: var(--verde-ok);
+  animation: destello-correcta 0.5s ease;
+}
+.opcion.marcada-correcta .letra-opcion { background: var(--verde-ok); border-color: var(--verde-ok); color: var(--negro); }
+
+.opcion.marcada-incorrecta {
+  background: linear-gradient(180deg, rgba(206,17,38,0.35), rgba(206,17,38,0.15));
+  border-color: var(--rojo);
+  animation: sacudir 0.4s ease;
+}
+.opcion.marcada-incorrecta .letra-opcion { background: var(--rojo); border-color: var(--rojo); color: var(--blanco); }
+
+@keyframes destello-correcta {
+  0% { box-shadow: 0 0 0 rgba(31,174,91,0); }
+  50% { box-shadow: 0 0 30px rgba(31,174,91,0.7); }
+  100% { box-shadow: 0 0 0 rgba(31,174,91,0); }
+}
+@keyframes sacudir {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.barra-control-presentador {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 20;
+  background: rgba(5,6,10,0.55);
+  padding: 10px;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+
+/* =========================================================
+   TARJETA CURIOSIDAD (overlay)
+   ========================================================= */
+.overlay-curiosidad {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,6,10,0.72);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  backdrop-filter: blur(3px);
+}
+.overlay-curiosidad.activo { display: flex; animation: aparecer 0.3s ease both; }
+
+.tarjeta-curiosidad {
+  width: min(560px, 90vw);
+  background: linear-gradient(180deg, rgba(15,37,71,0.98), rgba(6,16,33,0.99));
+  border: 1px solid var(--dorado);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  box-shadow: var(--sombra-dorada), 0 20px 50px rgba(0,0,0,0.5);
+}
+.etiqueta-curiosidad {
+  font-family: var(--fuente-display);
+  color: var(--dorado-claro);
+  font-size: 1.3rem;
+  margin: 0 0 14px;
+}
+.texto-curiosidad-contenido {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--blanco);
+  margin: 0 0 26px;
+}
+
+/* =========================================================
+   PANTALLA FINAL
+   ========================================================= */
+.contenido-final { text-align: center; max-width: 720px; }
+.titulo-ganador {
+  font-family: var(--fuente-display);
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  background: linear-gradient(180deg, var(--dorado-claro), var(--dorado) 70%, #a9822a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 6px;
+}
+.puntaje-ganador {
+  font-family: var(--fuente-marcador);
+  font-size: 1.4rem;
+  color: var(--amarillo);
+  margin: 0 0 36px;
+}
+.podio-final {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.fila-podio {
+  background: rgba(15,37,71,0.7);
+  border: 1px solid rgba(212,175,55,0.35);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 700;
+  min-width: 160px;
+}
+
+/* =========================================================
+   CONFETI
+   ========================================================= */
+#lienzo-confeti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+}
+
+/* =========================================================
+   RESPONSIVE — ajustes generales
+   ========================================================= */
+@media (max-width: 720px) {
+  .tarjeta-panel { padding: 26px; }
+  #pantalla-juego { padding-top: 140px; }
+  .marcador-equipos { top: 10px; }
+  .barra-control-presentador { flex-direction: row; overflow-x: auto; max-width: 94vw; }
+}
