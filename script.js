@@ -149,7 +149,7 @@ function inicializarConfiguracion() {
   $all('[data-stepper="equipos"]').forEach((btn) => {
     btn.addEventListener("click", () => {
       const dir = Number(btn.dataset.dir);
-      estado.config.numEquipos = Math.min(4, Math.max(1, estado.config.numEquipos + dir));
+      estado.config.numEquipos = Math.min(6, Math.max(1, estado.config.numEquipos + dir));
       $("#valor-equipos").textContent = estado.config.numEquipos;
     });
   });
