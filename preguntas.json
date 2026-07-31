@@ -11,7 +11,7 @@
     "tema": "Sociales",
     "nivel": 1,
     "curiosidad": "Ibagué es conocida como la Capital Musical de Colombia.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Ca%C3%B1%C3%B3n%20del%20r%C3%ADo%20Combeima%20Ibagu%C3%A9.jpg?width=800"
+    "imagen": ""
   },
   {
     "pregunta": "¿Cuál es el ave nacional de Colombia?",
@@ -53,21 +53,21 @@
     "tema": "Sociales",
     "nivel": 1,
     "curiosidad": "El río Magdalena recorre cerca de 1.550 km y ha sido la principal vía de transporte histórica del país.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/R%C3%ADo%20Magdalena%2C%20Colombia%2004.jpg?width=800"
+    "imagen": ""
   },
   {
-    "pregunta": "¿Cuántos colores tiene la bandera de Colombia?",
+    "pregunta": "¿Quién fue conocido como "El Libertador"?",
     "opciones": [
-      "2",
-      "3",
-      "4",
-      "5"
+      "Antonio Nariño",
+      "Francisco de Paula Santander",
+      "Simón Bolívar",
+      "Jose Maria Cordoba"
     ],
-    "correcta": 1,
+    "correcta": 3,
     "tema": "Sociales",
     "nivel": 1,
-    "curiosidad": "El amarillo, azul y rojo de la bandera representan, según una de sus interpretaciones, la riqueza, los mares y la sangre de los héroes.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Colombia.svg?width=800"
+    "curiosidad": "Simón Bolivar el libertador de varias naciones: colombia, venezuela, ecuador",
+    "imagen": ""
   },
   {
     "pregunta": "¿Cuál es la moneda de Colombia?",
@@ -95,62 +95,62 @@
     "tema": "Sociales",
     "nivel": 1,
     "curiosidad": "En Colombia la cordillera de los Andes se divide en tres ramales: Occidental, Central y Oriental.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Nevado%20del%20ruiz%20colombia.JPG?width=800"
-  },
-  {
-    "pregunta": "¿Qué planeta es conocido como el planeta rojo?",
-    "opciones": [
-      "Venus",
-      "Marte",
-      "Júpiter",
-      "Mercurio"
-    ],
-    "correcta": 1,
-    "tema": "Naturales",
-    "nivel": 1,
-    "curiosidad": "Marte debe su color rojizo al óxido de hierro que cubre su superficie.",
     "imagen": ""
   },
   {
-    "pregunta": "¿Cuál es el órgano que bombea la sangre?",
+    "pregunta": "¿Qué ciudad es conocida como la "Ciudad Heroica"?",
     "opciones": [
-      "Pulmón",
-      "Cerebro",
-      "Corazón",
-      "Riñón"
+      "Santa Marta",
+      "Cartagena",
+      "Popayán",
+      "Cali"
     ],
     "correcta": 2,
     "tema": "Naturales",
     "nivel": 1,
-    "curiosidad": "El corazón humano late en promedio unas 100.000 veces al día.",
+    "curiosidad": "Las bellas murallas de cartagena",
     "imagen": ""
   },
   {
-    "pregunta": "¿Qué gas respiramos principalmente?",
+    "pregunta": "¿Cuál es el departamento más grande de Colombia en superficie?",
     "opciones": [
-      "CO2",
-      "Oxígeno",
-      "Helio",
-      "Nitrógeno"
+      "Antioquia",
+      "Amazonas",
+      "Quindio",
+      "Atlántico"
+    ],
+    "correcta": 2,
+    "tema": "Naturales",
+    "nivel": 1,
+    "curiosidad": "El pulmón del planeta.",
+    "imagen": ""
+  },
+  {
+    "pregunta": "¿Cuál de estos ecosistemas se encuentra en Colombia?",
+    "opciones": [
+      "Todas las siguientes",
+      "Paramo",
+      "Manglar",
+      "Selva Tropical"
     ],
     "correcta": 1,
     "tema": "Naturales",
     "nivel": 1,
-    "curiosidad": "Aunque respiramos oxígeno, el gas más abundante en el aire que inhalamos es en realidad el nitrógeno.",
+    "curiosidad": "Colombia de los paises más biodiversos.",
     "imagen": ""
   },
   {
-    "pregunta": "¿Qué animal produce la seda?",
+    "pregunta": "¿Animal famoso por Gabriel García Márquez?",
     "opciones": [
-      "Abeja",
-      "Gusano de seda",
-      "Araña",
-      "Mariposa"
+      "Mariposas amarillas",
+      "Gusanos dorados",
+      "Rana tigre",
+      "Colibri azulado"
     ],
     "correcta": 1,
     "tema": "Naturales",
     "nivel": 2,
-    "curiosidad": "El gusano de seda produce el hilo al tejer su capullo antes de convertirse en polilla.",
+    "curiosidad": "Las mariposas amarillas en Cien años de soledad son un símbolo del amor apasionado",
     "imagen": ""
   },
   {
@@ -165,7 +165,7 @@
     "tema": "Sociales",
     "nivel": 2,
     "curiosidad": "El Amazonas ocupa más de 109.000 km², casi la totalidad cubierta por selva tropical.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20Regia%20-%20La%20Milagrosa%20-%20Leticia%2C%20Amazonas%20Colombia%20-%20panoramio.jpg?width=800"
+    "imagen": ""
   },
   {
     "pregunta": "¿Qué mar limita al norte de Colombia?",
@@ -196,31 +196,17 @@
     "imagen": ""
   },
   {
-    "pregunta": "¿Qué inventor creó la bombilla práctica?",
+    "pregunta": "¿Cuál de estos instrumentos es fundamental en la música vallenata tradicional?",
     "opciones": [
-      "Newton",
-      "Edison",
-      "Tesla",
-      "Bell"
+      "Acordeón",
+      "Arpa",
+      "Guitarra",
+      "Marimba"
     ],
     "correcta": 1,
     "tema": "Naturales",
     "nivel": 2,
-    "curiosidad": "Thomas Edison perfeccionó en 1879 un filamento de bombilla que podía durar cientos de horas.",
-    "imagen": ""
-  },
-  {
-    "pregunta": "¿Qué capa protege de los rayos UV?",
-    "opciones": [
-      "Troposfera",
-      "Capa de ozono",
-      "Núcleo",
-      "Manto"
-    ],
-    "correcta": 1,
-    "tema": "Naturales",
-    "nivel": 2,
-    "curiosidad": "La capa de ozono se ubica en la estratosfera y filtra la mayor parte de la radiación ultravioleta del sol.",
+    "curiosidad": "Ritmo con sentimiento, lo da el acordeón",
     "imagen": ""
   },
   {
@@ -238,17 +224,17 @@
     "imagen": ""
   },
   {
-    "pregunta": "¿Cuál es el mamífero terrestre más grande?",
+    "pregunta": "¿Cuál es el mamífero terrestre más grande en Colombia?",
     "opciones": [
       "Elefante",
-      "Jirafa",
-      "Hipopótamo",
-      "Rinoceronte"
+      "Tapir",
+      "Condor",
+      "Dragon de Komodo"
     ],
     "correcta": 0,
     "tema": "Naturales",
     "nivel": 2,
-    "curiosidad": "El elefante africano puede llegar a pesar más de 6 toneladas.",
+    "curiosidad": "El tapir mide cerca de 2 metros de largo y está en el amazonas.",
     "imagen": ""
   },
   {
@@ -277,7 +263,7 @@
     "tema": "Sociales",
     "nivel": 2,
     "curiosidad": "Medellín es conocida como la 'Ciudad de la Eterna Primavera' por su clima estable durante todo el año.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Valley%20of%20Medell%C3%ADn-%20skyline.jpg?width=800"
+    "imagen": ""
   },
   {
     "pregunta": "¿Quién liberó gran parte del norte de Suramérica?",
@@ -291,20 +277,20 @@
     "tema": "Sociales",
     "nivel": 3,
     "curiosidad": "Simón Bolívar lideró las campañas independentistas que dieron origen a la Gran Colombia en 1819.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Estatua%20de%20Sim%C3%B3n%20Bol%C3%ADvar%20-%20Guatap%C3%A9.jpg?width=800"
+    "imagen": ""
   },
   {
-    "pregunta": "¿Qué órgano filtra la sangre?",
+    "pregunta": "¿Cuál de estos animales es una especie emblemática de los páramos colombianos?",
     "opciones": [
-      "Hígado",
-      "Riñón",
-      "Estómago",
-      "Páncreas"
+      "Delfín rosado",
+      "Caimán del Magdalena",
+      "Frailejón",
+      "Oso de anteojos"
     ],
-    "correcta": 1,
+    "correcta": 4,
     "tema": "Naturales",
     "nivel": 3,
-    "curiosidad": "Cada riñón contiene más de un millón de pequeños filtros llamados nefronas.",
+    "curiosidad": "El Oso anteojos habita en ecosistemas de alta montaña en Colombia.",
     "imagen": ""
   },
   {
@@ -336,7 +322,7 @@
     "imagen": ""
   },
   {
-    "pregunta": "¿Cuál es el satélite natural de la Tierra?",
+    "pregunta": "¿Cuál es el satélite natural de la Colombia?",
     "opciones": [
       "Marte",
       "Luna",
@@ -361,20 +347,20 @@
     "tema": "Sociales",
     "nivel": 3,
     "curiosidad": "El Paisaje Cultural Cafetero, en la región Andina, fue declarado Patrimonio de la Humanidad por la UNESCO en 2011.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Valle%20del%20cocora%203.jpg?width=800"
+    "imagen": ""
   },
   {
-    "pregunta": "¿Cuál es el metal líquido a temperatura ambiente?",
+    "pregunta": "¿Cuál de estos animales es endémico de Colombia y se encuentra principalmente en la región del Caribe?",
     "opciones": [
-      "Hierro",
-      "Mercurio",
-      "Plata",
-      "Cobre"
+      "Panda gigante",
+      "Canguro",
+      "Oso polar",
+      "Tití cabeciblanco"
     ],
-    "correcta": 1,
+    "correcta": 4,
     "tema": "Naturales",
     "nivel": 3,
-    "curiosidad": "El mercurio se mantiene líquido a temperatura ambiente porque su punto de fusión es de -39 °C.",
+    "curiosidad": "El tití cabeciblanco es endémico de Colombia, habitando de forma exclusiva en los bosques secos de la región norte del país.",
     "imagen": ""
   },
   {
@@ -389,7 +375,7 @@
     "tema": "Sociales",
     "nivel": 3,
     "curiosidad": "Caño Cristales es apodado 'el río de los cinco colores' por las plantas acuáticas que tiñen sus aguas.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/CA%C3%91O%20CRISTALES%20EL%20R%C3%8DO%20DE%20LOS%20CINCO%20COLORES.jpg?width=800"
+    "imagen": ""
   },
   {
     "pregunta": "¿Qué instrumento mide los sismos?",
@@ -403,20 +389,6 @@
     "tema": "Naturales",
     "nivel": 3,
     "curiosidad": "El sismógrafo registra las vibraciones del terreno y permite calcular la magnitud de un sismo.",
-    "imagen": ""
-  },
-  {
-    "pregunta": "¿Cuál es el único mamífero que puede volar?",
-    "opciones": [
-      "Ardilla",
-      "Murciélago",
-      "Colibrí",
-      "Planeador"
-    ],
-    "correcta": 1,
-    "tema": "Naturales",
-    "nivel": 3,
-    "curiosidad": "El murciélago es el único mamífero capaz de volar de forma activa y sostenida, no solo planear.",
     "imagen": ""
   },
   {
@@ -434,34 +406,6 @@
     "imagen": ""
   },
   {
-    "pregunta": "¿Qué animal es el más grande del planeta?",
-    "opciones": [
-      "Elefante",
-      "Ballena azul",
-      "Tiburón",
-      "Orca"
-    ],
-    "correcta": 1,
-    "tema": "Naturales",
-    "nivel": 4,
-    "curiosidad": "La ballena azul puede medir hasta 30 metros y pesar más de 150 toneladas, el mayor animal conocido.",
-    "imagen": ""
-  },
-  {
-    "pregunta": "¿Cuál es el principal gas del aire?",
-    "opciones": [
-      "Oxígeno",
-      "Nitrógeno",
-      "CO2",
-      "Argón"
-    ],
-    "correcta": 1,
-    "tema": "Naturales",
-    "nivel": 4,
-    "curiosidad": "El nitrógeno compone cerca del 78% de la atmósfera terrestre.",
-    "imagen": ""
-  },
-  {
     "pregunta": "¿Qué desierto está en La Guajira?",
     "opciones": [
       "Tatacoa",
@@ -473,7 +417,7 @@
     "tema": "Sociales",
     "nivel": 4,
     "curiosidad": "El desierto de La Guajira combina paisajes áridos con playas del mar Caribe, un contraste único en Colombia.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Desierto%20de%20la%20Guajira.JPG?width=800"
+    "imagen": ""
   },
   {
     "pregunta": "¿Cuál es el pico más alto de Colombia?",
@@ -487,20 +431,6 @@
     "tema": "Sociales",
     "nivel": 4,
     "curiosidad": "El Pico Cristóbal Colón, en la Sierra Nevada de Santa Marta, alcanza 5.775 msnm y está a solo 42 km del mar.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Sierra%20Nevada%20de%20Santa%20Marta%20banner.jpg?width=800"
-  },
-  {
-    "pregunta": "¿Qué inventor del teléfono es reconocido tradicionalmente?",
-    "opciones": [
-      "Bell",
-      "Tesla",
-      "Marconi",
-      "Morse"
-    ],
-    "correcta": 0,
-    "tema": "Naturales",
-    "nivel": 4,
-    "curiosidad": "Alexander Graham Bell patentó el teléfono en 1876, aunque su autoría ha sido históricamente debatida.",
     "imagen": ""
   },
   {
@@ -516,20 +446,6 @@
     "nivel": 4,
     "curiosidad": "El río Magdalena desemboca en Bocas de Ceniza, cerca de Barranquilla.",
     "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/R%C3%ADo%20Magdalena%2C%20Colombia%2004.jpg?width=800"
-  },
-  {
-    "pregunta": "¿Qué órgano controla el sistema nervioso?",
-    "opciones": [
-      "Corazón",
-      "Cerebro",
-      "Pulmón",
-      "Hígado"
-    ],
-    "correcta": 1,
-    "tema": "Naturales",
-    "nivel": 4,
-    "curiosidad": "El cerebro humano contiene cerca de 86.000 millones de neuronas.",
-    "imagen": ""
   },
   {
     "pregunta": "¿Qué ecosistema almacena gran cantidad de agua en Colombia?",
@@ -557,6 +473,6 @@
     "tema": "Sociales",
     "nivel": 4,
     "curiosidad": "Las murallas de Cartagena, construidas para defenderla de piratas, fueron declaradas Patrimonio de la Humanidad en 1984.",
-    "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Murallas%2C%20Cartagena%20de%20indias%20Colombia-2008%2004.jpg?width=800"
+    "imagen": ""
   }
 ]
